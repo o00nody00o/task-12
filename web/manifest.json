@@ -1,6 +1,6 @@
 {
-    "name": "the_final_page",
-    "short_name": "the_final_page",
+    "name": "edu_vista",
+    "short_name": "edu_vista",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
