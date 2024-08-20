@@ -47,10 +47,30 @@ class _CategoriesPageState extends State<CategoriesPage> {
       key: scaffoldKey,
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
-        
         child: Column(
           mainAxisSize: MainAxisSize.max,
           children: [
+            _tabs[_currentIndex],
+            BottomNavigationBar(
+                currentIndex: _currentIndex,
+                onTap: (int index) {
+                  setState(() {
+                    _currentIndex = index;
+                  });
+                },
+                items: [
+                  BottomNavigationBarItem(
+                      icon: Icon(Icons.home), label: 'search'),
+                  BottomNavigationBarItem(
+                      icon: Icon(Icons.my_library_books_outlined),
+                      label: 'search'),
+                  BottomNavigationBarItem(
+                      icon: Icon(Icons.search), label: 'search'),
+                  BottomNavigationBarItem(
+                    label: 'search',
+                    icon: Icon(Icons.chat),
+                  ),
+                ]),
             SizedBox(
               height: 30,
             ),
@@ -701,34 +721,8 @@ class _CategoriesPageState extends State<CategoriesPage> {
                 ],
               ),
             ),
-          Column(children: [
-          _tabs[_currentIndex],
-          BottomNavigationBar(
-            currentIndex: _currentIndex,
-            onTap: (int index) {
-              setState(() {
-                _currentIndex = index;
-              });
-            },
-
-          items: [
-              BottomNavigationBarItem(
-                icon: Icon(Icons.home),
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.my_library_books_outlined),
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.search),
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.chat),
-              ),
-            ]
-          ),
-        ]), ],
+          ],
         ),
-
       ),
     );
   }
