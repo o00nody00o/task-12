@@ -1,4 +1,5 @@
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:the_final_page/models/category.dart';
 import 'package:the_final_page/models/instructor.dart';
 
